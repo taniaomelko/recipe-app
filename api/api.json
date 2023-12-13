@@ -1,0 +1,32 @@
+[
+{ "id":1,
+  "title":"Spaghetti Bolognese",
+  "img": "spaghetti-bolognese.jpg",
+  "ingredients":["Spaghetti","Ground beef","Tomato sauce","Onion","Garlic","Olive oil","Salt","Pepper"],
+  "instructions":["Cook spaghetti according to package instructions.","In a pan, sauté chopped onions and minced garlic in olive oil.","Add ground beef and cook until browned.","Pour in tomato sauce, season with salt and pepper. Simmer.","Serve the sauce over cooked spaghetti."]
+},
+{ "id":2,
+  "title":"Chicken Caesar Salad",
+  "img": "chicken-caesar-salad.jpg",
+  "ingredients":["Chicken breast","Romaine lettuce","Croutons","Parmesan cheese","Caesar dressing"],
+  "instructions":["Grill or pan-sear chicken breast until fully cooked.","Chop romaine lettuce into bite-sized pieces.","Combine lettuce, croutons, and sliced chicken in a bowl.","Sprinkle with Parmesan cheese and drizzle Caesar dressing.","Toss well and enjoy!"]
+},
+{ "id":3,
+  "title":"Vegetarian Stir-Fry",
+  "img": "vegetarian-stir-fry.jpg",
+  "ingredients":["Broccoli","Carrots","Bell peppers","Snap peas","Tofu","Soy sauce","Ginger","Garlic","Sesame oil"],
+  "instructions":["Cut tofu into cubes and stir-fry until golden brown.","Add chopped vegetables (broccoli, carrots, bell peppers, snap peas).","In a bowl, mix soy sauce, minced ginger, and minced garlic.","Pour the sauce over the vegetables and tofu. Stir well.","Drizzle with sesame oil and serve over rice."]
+},
+{ "id":4,
+  "title":"Margherita Pizza",
+  "img": "margherita-pizza.jpg",
+  "ingredients":["Pizza dough","Tomato sauce","Fresh mozzarella","Basil leaves","Olive oil","Salt"],
+  "instructions":["Preheat the oven to 475°F (245°C).","Roll out pizza dough and place on a baking sheet.","Spread tomato sauce evenly on the dough.","Add slices of fresh mozzarella and sprinkle with salt.","Bake in the oven until the crust is golden and cheese is melted.","Remove from the oven, top with fresh basil, and drizzle with olive oil."]
+},
+{ "id":5,
+  "title":"Chocolate Chip Cookies",
+  "img": "chocolate-chip-cookies.jpg",
+  "ingredients":["All-purpose flour","Butter","Brown sugar","White sugar","Eggs","Vanilla extract","Baking soda","Salt","Chocolate chips"],
+  "instructions":["Preheat the oven to 350°F (175°C).","In a large bowl, cream together softened butter, brown sugar, and white sugar.","Beat in eggs one at a time, then stir in vanilla extract.","Combine flour, baking soda, and salt. Gradually add to the wet ingredients.","Fold in chocolate chips.","Drop rounded tablespoons of dough onto ungreased baking sheets.","Bake for 10–12 minutes or until edges are golden. Cool on wire racks."]
+}
+]
