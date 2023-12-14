@@ -1,6 +1,5 @@
 import axios from 'axios';
-// const URL = 'https://api.jsonserve.com/0GB3Dg';
-const URL = '../../api/api.json';
+const URL = process.env.PUBLIC_URL + '/api/api.json';
 
 export const getData = async () => {
   try {

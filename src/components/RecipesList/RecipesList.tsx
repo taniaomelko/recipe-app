@@ -40,7 +40,7 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
               <h3 className="recipe-title">
                 {recipe.title}
               </h3>
-              <img src={`../../img/${recipe.img}`} alt={recipe.title} className="recipe-img" />
+              <img src={`./img/${recipe.img}`} alt={recipe.title} className="recipe-img" />
             </Link>
           ))}
         </div>

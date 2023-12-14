@@ -10,7 +10,9 @@ const router =
       <Route path="recipes" element={ <RecipesList recipes={[]} />} />
       <Route path="recipes/:title" element={<Recipe />} />
     </Route>
-  )
+  ), {
+    basename: process.env.PUBLIC_URL
+  }
 );
 
 function App() {

@@ -42,7 +42,7 @@ export const Recipe: React.FC = () => {
         {currentRecipe ? (
           <div>
             <h2 className="recipe__title">{currentRecipe.title}</h2>
-            <img src={`../../img/${currentRecipe.img}`} alt={currentRecipe.title} className="recipe__img" />
+            <img src={`./img/${currentRecipe.img}`} alt={currentRecipe.title} className="recipe__img" />
             <div className="recipe__ingredients">
               <h3 className="recipe__subtitle">Ingredients:</h3>
               <ul>
