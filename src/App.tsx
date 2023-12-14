@@ -6,9 +6,9 @@ import './App.css';
 
 const router = 
   createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={ <Root/> }>
+    <Route path="*" element={ <Root/> }>
       <Route path="recipes" element={ <RecipesList recipes={[]} />} />
-      <Route path="/recipes/:title" element={<Recipe />} />
+      <Route path="recipes/:title" element={<Recipe />} />
     </Route>
   )
 );
