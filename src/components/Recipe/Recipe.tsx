@@ -29,17 +29,8 @@ export const Recipe: React.FC = () => {
   };
 
   const handlePrevClick = () => {
-    navigate(`/recipes`);
+    navigate(-1);
   };
-
-  if (!currentRecipe) {
-    return (
-      <div>
-        <h2>Recipe not found</h2>
-        <p>No information available for {title}</p>
-      </div>
-    );
-  }
 
   return (
     <section className="recipe">
@@ -48,7 +39,7 @@ export const Recipe: React.FC = () => {
           <button onClick={handlePrevClick}>Back</button>
         </div>
 
-        {currentRecipe && (
+        {currentRecipe ? (
           <div>
             <h2 className="recipe__title">{currentRecipe.title}</h2>
             <img src={`../../img/${currentRecipe.img}`} alt={currentRecipe.title} className="recipe__img" />
@@ -69,6 +60,12 @@ export const Recipe: React.FC = () => {
               </ol>
             </div>
           </div>
+        )
+        : (
+          <>
+            <h2>Recipe not found</h2>
+            <p>No information available for {title}</p>
+          </>
         )}
       </div>
     </section>
