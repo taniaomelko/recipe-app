@@ -3,6 +3,7 @@ import { IRecipe } from "../../types/IRecipe";
 import './Recipe.scss';
 import { useParams, useNavigate } from "react-router-dom";
 import { getData } from "../../data/api";
+import { generateRecipeLink } from "../../utils";
 
 export const Recipe: React.FC = () => {
   const { title = '' } = useParams<{ title: string }>();
@@ -20,13 +21,9 @@ export const Recipe: React.FC = () => {
     fetchRecipes();
   }, []);
 
-  useEffect(() => {    
+  useEffect(() => {
     setCurrentRecipe(allRecipes.find(recipe => generateRecipeLink(recipe.title) === title));
   }, [allRecipes, title]);
-
-  const generateRecipeLink = (title:string) => {
-    return `${title.toLowerCase().replace(/\s+/g, '-')}`;
-  };
 
   const handlePrevClick = () => {
     navigate(-1);
