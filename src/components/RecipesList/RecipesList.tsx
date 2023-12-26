@@ -63,7 +63,7 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
         <div className="recipes__search">
           <Search />
         </div>
-        <div className="recipes__list">
+        <div className="recipes__list" id="recipes-list">
           {visibleRecipes.map(recipe => (
             <Link to={`/recipes/${generateRecipeLink(recipe.title)}`} key={recipe.id} className="recipe-item">
               <h3 className="recipe-title">
@@ -75,13 +75,13 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
         </div>
 
         {isLoadMoreVisible && (
-          <div className="load-more-btn">
+          <div className="load-more-btn" id="load-more-btn">
             <button onClick={loadMore}>Load More</button>
           </div>
         )}
 
         {!visibleRecipes.length && allRecipes.length > 0 && (
-          <div>No recipes found</div>
+          <div id="no-recipe-msg">No recipes found</div>
         )}
       </div>
     </section>
