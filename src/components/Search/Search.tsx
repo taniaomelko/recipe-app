@@ -1,19 +1,15 @@
-import React, { useReducer, MouseEvent } from 'react';
+import React from 'react';
 import './Search.scss';
-import { searchRecipes } from '../../actions';
-import { recipesListReducer } from '../../reducers/recipesList';
+import { searchRecipesAction } from '../../actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from "../../reducers";
 
 export const Search: React.FC = () => {
-  const [state, dispatch] = useReducer(recipesListReducer, {
-    allRecipes: [],
-    visibleRecipes: [],
-    searchQuery: '',
-  });
+  const dispatch = useDispatch();
+  const searchQuery = useSelector((state: RootState) => state.recipes.searchQuery);
 
-  const handleSearch = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    console.log('Searching for:', state.searchQuery);
-    dispatch(searchRecipes(state.searchQuery));
+  const handleSearch = () => {
+    dispatch(searchRecipesAction(searchQuery));
   };
 
   return (
@@ -21,9 +17,10 @@ export const Search: React.FC = () => {
       <input
         type="text"
         placeholder="Search recipes..."
-        value={state.searchQuery}
-        onChange={(e) => dispatch(searchRecipes(e.target.value))}
+        onChange={(e) => dispatch(searchRecipesAction(e.target.value))}
         className="search-input"
+        id="search-input"
+        value={searchQuery}
       />
       <button onClick={handleSearch} className="search-button">
         Search
