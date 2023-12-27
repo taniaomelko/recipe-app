@@ -19,6 +19,7 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
   const visibleRecipes = useSelector((state: RootState) => state.recipes.visibleRecipes);
   const searchQuery = useSelector((state: RootState) => state.recipes.searchQuery);
   const totalLoaded = useSelector((state: RootState) => state.recipes.totalLoaded);
+  const filteredRecipesLength = useSelector((state: RootState) => state.recipes.filteredRecipesLength);
 
   const [isLoadMoreVisible, setLoadMoreVisible] = useState(true);
   const [isLoading, setLoading] = useState(true);
@@ -36,14 +37,13 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
   useEffect(() => {
     if (visibleRecipes.length > 0 && visibleRecipes.length < allRecipes.length) {
       setLoadMoreVisible(true);
-      if (visibleRecipes.length !== totalLoaded) {
+      if (filteredRecipesLength === visibleRecipes.length || visibleRecipes.length !== totalLoaded) {
         setLoadMoreVisible(false);
       }
     } else {
       setLoadMoreVisible(false);
     }
-  }, [visibleRecipes, allRecipes, searchQuery, totalLoaded]);
-
+  }, [visibleRecipes, allRecipes, searchQuery, totalLoaded, filteredRecipesLength]);
 
   if (isLoading) {
     return (
