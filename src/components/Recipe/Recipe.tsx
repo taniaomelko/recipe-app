@@ -33,7 +33,7 @@ export const Recipe: React.FC = () => {
     <section className="recipe">
       <div className="container">
         <div className="recipe__prev-btn-wrap">
-          <button onClick={handlePrevClick}>Back</button>
+          <button onClick={handlePrevClick} id="back-button">Back</button>
         </div>
 
         {currentRecipe ? (

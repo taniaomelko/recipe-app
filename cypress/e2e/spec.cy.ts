@@ -8,6 +8,28 @@ describe('Request', () => {
   })
 });
 
+describe('Active nav link test', () => {  
+  it('should have class "active" on one item and not on others', () => {
+    cy.visit('/');
+    cy.get('header nav li').eq(1).find('a').click();
+    cy.get('header nav li').each(($li, index) => {
+      if (index === 1) {
+        cy.wrap($li).find('a').should('have.class', 'active');
+      } else {
+        cy.wrap($li).find('a').should('not.have.class', 'active');
+      }
+    });
+    cy.get('header nav li').eq(0).find('a').click();
+    cy.get('header nav li').each(($li, index) => {
+      if (index === 0) {
+        cy.wrap($li).find('a').should('have.class', 'active');
+      } else {
+        cy.wrap($li).find('a').should('not.have.class', 'active');
+      }
+    });
+  });
+});
+
 describe('No recipes found test', () => {
   it('should display "No recipes found" message after random searching', () => {
     cy.visit('/recipes');
@@ -115,3 +137,26 @@ describe('Search for "s" test', () => {
   });
 });
 
+describe('Search for "o" test', () => {
+  it('should display 2 recipes', () => {
+    cy.visit('/recipes');
+    cy.get('#search-input').type('o');
+    cy.get('#recipes-list .recipe-item').its('length').should('eq', 2);
+    cy.get('#load-more-btn').should('not.exist');
+  });
+});
+
+describe('Load recipe test', () => {
+  beforeEach(() => {
+    cy.visit('/recipes');
+    cy.get('#recipes-list .recipe-item').first().click();
+  });
+  it('should display clicked recipe', () => {
+    cy.get('.recipe__title').should('contain', 'Spaghetti Bolognese');
+    cy.get('#back-button').should('exist');
+  });
+  it('should return to recipes on click on back button', () => {
+    cy.get('#back-button').click();
+    cy.get('#recipes-list').should('exist');
+  });
+});
