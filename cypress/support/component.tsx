@@ -15,11 +15,20 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import { store } from '../../src/store';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-import { mount } from 'cypress/react18'
+import { mount } from 'cypress/react18';
+import { Provider } from 'react-redux';
+
+Cypress.Commands.add("mount", (component, mountOptions) => {
+  const wrapped = <Provider store={store}>{component}</Provider>;
+
+  return mount(wrapped, mountOptions);
+});
+
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
