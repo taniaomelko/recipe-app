@@ -15,7 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import { store } from '../../src/store';
+import { getStore } from '../../src/store';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -23,8 +23,9 @@ import { store } from '../../src/store';
 import { mount } from 'cypress/react18';
 import { Provider } from 'react-redux';
 
-Cypress.Commands.add("mount", (component, mountOptions) => {
-  const wrapped = <Provider store={store}>{component}</Provider>;
+Cypress.Commands.add("mount", (component, mountOptions = {}) => {
+  const reduxStore = getStore();
+  const wrapped = <Provider store={reduxStore}>{component}</Provider>;
 
   return mount(wrapped, mountOptions);
 });

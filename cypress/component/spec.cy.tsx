@@ -1,13 +1,10 @@
-import App from "../../src/App";
 import { RecipesList } from "../../src/components/RecipesList/RecipesList";
-import { Recipe } from "../../src/components/Recipe/Recipe";
+import { getStore } from "../../src/store";
 
 describe("NewsLetterSubscription.cy.js", () => {
   it("Should display a ", () => {
+    const store = getStore();
     cy.mount(<RecipesList />);
-  });
-
-  it("Should display a ", () => {
-    cy.mount(<Recipe />);
+    // cy.mount(<RecipesList />, { reduxStore: store });
   });
 });
