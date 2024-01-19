@@ -22,7 +22,7 @@ export const Search: React.FC = () => {
         id="search-input"
         value={searchQuery}
       />
-      <button onClick={handleSearch} className="search-button">
+      <button onClick={handleSearch} className="button button--primary button--small">
         Search
       </button>
     </div>

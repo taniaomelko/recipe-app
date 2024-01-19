@@ -2,7 +2,7 @@ import Root from './components/Root/Root';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { RecipesList } from './components/RecipesList/RecipesList';
 import { Recipe } from './components/Recipe/Recipe';
-import './App.css';
+import './App.scss';
 
 const router = 
   createBrowserRouter(createRoutesFromElements(

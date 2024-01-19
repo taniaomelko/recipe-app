@@ -76,7 +76,7 @@ export const RecipesList: React.FC<RecipesListProps> = () => {
 
         {isLoadMoreVisible && (
           <div className="load-more-btn" id="load-more-btn">
-            <button onClick={loadMore}>Load More</button>
+            <button className="button button--primary" onClick={loadMore}>Load More</button>
           </div>
         )}
 
